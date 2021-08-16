@@ -1,12 +1,17 @@
 :root {
-    --primary-color: #1d5888;
-    --secondary-color: #ff993b;
-    --dark-color: #292929;
+    --primary-color: #dacff5;
+    --secondary-color: #ebe37c;
+    --dark-color: #1f1d1d;
     --white-color: #dff3e4;
 }
 
+.logoFont {
+    font-family: 'Aldrich', sans-serif;
+}
+
 body {
-    color: var(--dark-color);
+    color: var(--primary-color);
+    background-image: linear-gradient(to right, #c31432, #240b36)
 }
 
 nav {
@@ -15,14 +20,11 @@ nav {
 
 footer {
     background-color: var(--dark-color);
+    padding-right: 1rem;
 }
 
 h1,h2,h3,h4,h5,h6 {
     color: var(--primary-color);
-}
-
-footer {
-    padding-right: 1rem;
 }
 
 footer .social>a {
@@ -52,7 +54,18 @@ footer .social>a:hover {
 }
 
 .checklist >li i {
-    color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--dark-color);
 }
 
 main>.container {
