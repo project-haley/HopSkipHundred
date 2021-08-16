@@ -6,15 +6,41 @@ function HelloWorld() {
 
 
 
-function hopSkipHundred(startValue, endValue) {
-    startValue = document.getElementById('startValue');
-    endValue = document.getElementById('endValue');
+function getValues() {
+    let startValue = document.getElementById("startValue").value;
+    let endValue = document.getElementById("endValue").value;
 
-    for (let i = startValue; i < endValue; i++) {
-        if (i % 2 == 0) {
-            // print i bold
-        } else {
-            // print i normal
-        }
+    startValue = parseInt(startValue);
+    endValue = parseInt(endValue);
+
+    let numbers = generateNumbers(startValue, endValue);
+
+    return numbers;
+
+    alert("Start Value: " + String(numbers));
+}
+
+function generateNumbers(start, end) {
+    let numbers = [];
+
+    for (let index = start; index <= end; index++) {
+        numbers.push(index);
     }
+
+    return numbers;
+}
+
+function generateTable() {
+    let numbers = getValues();
+    let startValue = numbers[0];
+    let endValue = numbers[numbers.length - 1];
+    let table = document.getElementById("results")
+    let tableString = ""
+
+    for (index = startValue; index <= endValue; index++) {
+        tableString += `<tr><td>${index}</td></tr>`
+    }
+
+    table.innerHTML = tableString;
+    // alert(String(startValue) + " and " + String(endValue));
 }
