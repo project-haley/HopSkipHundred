@@ -26,7 +26,7 @@
 
 <body class="d-flex flex-column h-100">
     <!-- Nav section -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand logoFont" href="/index.html"><img class="mb-1" src="img/HopSkipHundred-chroma.svg" width="30" class="d-inline-block align-text-top">HsH</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -58,22 +58,63 @@
     <!-- Main section -->
     <main class="flex-shrink-0">
         <div class="container py-5 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for Hopskip Hundred</h2>
             <div class="row row-cols-1 row-cols-lg-2 ">
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            // call Hello World
-                            function helloWorld() {
-                                alert("Hello World!")
+                            function getValues() {
+                                let startValue = document.getElementById("startValue").value;
+                                let endValue = document.getElementById("endValue").value;
+                            
+                                startValue = parseInt(startValue);
+                                endValue = parseInt(endValue);
+                            
+                                if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+                                    let numbers = generateNumbers(startValue, endValue);
+                                    return numbers;
+                                }
+                            }
+                            
+                            function generateNumbers(start, end) {
+                                let numbers = [];
+                            
+                                for (let index = start; index <= end; index++) {
+                                    numbers.push(index);
+                                }
+                            
+                                return numbers;
+                            }
+                            
+                            function generateTable() {
+                                let numbers = getValues();
+                                let tableResult = document.getElementById("results")
+                                let tableString = ""
+                                let className = "even"
+                            
+                                for (index = numbers[0]; index <= numbers[numbers.length - 1]; index++) {
+                                    if (index % 2 == 0) {
+                                        className = "even";
+                                    } else {
+                                        className = "odd";
+                                    }
+                                    templateRows += `&lt;tr>&lt;td class="${className}">${number}&lt;/td>&lt;/tr>
+                            
+                                }
+                            
+                                tableResult.innerHTML = tableString;
                             }
                         </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structed in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World!"</p>
+                    <p>The Code is structed in three functions.</p>
+                    <h5>getValues()</h5>
+                    <p>getValues() retrieves the start and end values for the Hopskip table as entered.</p>
+                    <h5>generateNumbers()</h5>
+                    <p>generateNumbers() creates an array of all integers between the start and end values (inclusive) for display in the table.</p>
+                    <h5>generateTable()</h5>
+                    <p>generateTable() dynamically writes HTML to display the range of values specified.  The table is styled using Bootstrap 5.</p>
                 </div>
             </div>
         </div>

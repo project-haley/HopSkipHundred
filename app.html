@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
     <head>
-        <title>App Name: A Coding Project By Ryan Haley</title>
+        <title>Hopskip Hundred: A Coding Project By Ryan Haley</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +25,7 @@
 
     <body class="d-flex flex-column h-100">
         <!-- Nav section -->
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand logoFont" href="/index.html"><img class="mb-1" src="img/HopSkipHundred-chroma.svg" width="30" class="d-inline-block align-text-top">HsH</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -59,8 +59,8 @@
             <div class="container">
                 <div class="row row-cols-1 row-cols-lg-2">
                     <div class="col-lg-4 col">
-                        <h1>Hop Skip Hundred: A Coding Project</h1>
-                        <h4 class="lead">Some nice description.  Pretty language to explain what the project does.</h4>
+                        <h1>Hopskip Hundred: A Coding Project</h1>
+                        <h4 class="lead">Really feel the evens.</h4>
                         <h2 class="mt-5 border-bottom border-2">Instructions</h2>
                         <p>Enter a starting value and an ending value.  Press the button and the values will appear.</p>
                     </div>
@@ -75,13 +75,13 @@
                                 <input id="endValue" type="number" class="form-control" placeholder="End Value" value="100" aria-label="End Value">
                             </div>
                             <div class="col-12 d-flex justify-content-end">
-                                <button id="btnSubmit" type="submit" class="btn btn-outline-dark btn-lg">Go!</button>
+                                <button id="btnSubmit" type="button" class="btn btn-outline-dark btn-lg">Go!</button>
                             </div>
                         </form>
 
                         <h2 class="mt-5 border-bottom border-2">Results</h2>
                         <div class="table-responsive">
-                            <table class="table table-striped table-sm">
+                            <table class="table table-striped bg-light">
                                 <tbody id="results">
                                     <!-- JS -->
                                 </tbody>
@@ -125,7 +125,7 @@
         </script>
         <script src="/js/site.js"></script>
         <script>
-            document.getElementById("btnSubmit").addEventListener("click",generateTable);
+            document.getElementById("btnSubmit").addEventListener("click", generateTable);
         </script>
 
     </body>

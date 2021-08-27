@@ -1,11 +1,3 @@
-
-// call Hello World
-function HelloWorld() {
-    alert("Hello World!")
-}
-
-
-
 function getValues() {
     let startValue = document.getElementById("startValue").value;
     let endValue = document.getElementById("endValue").value;
@@ -13,11 +5,10 @@ function getValues() {
     startValue = parseInt(startValue);
     endValue = parseInt(endValue);
 
-    let numbers = generateNumbers(startValue, endValue);
-
-    return numbers;
-
-    alert("Start Value: " + String(numbers));
+    if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+        let numbers = generateNumbers(startValue, endValue);
+        return numbers;
+    }
 }
 
 function generateNumbers(start, end) {
@@ -32,15 +23,19 @@ function generateNumbers(start, end) {
 
 function generateTable() {
     let numbers = getValues();
-    let startValue = numbers[0];
-    let endValue = numbers[numbers.length - 1];
-    let table = document.getElementById("results")
+    let tableResult = document.getElementById("results")
     let tableString = ""
+    let className = "even"
 
-    for (index = startValue; index <= endValue; index++) {
-        tableString += `<tr><td>${index}</td></tr>`
+    for (index = numbers[0]; index <= numbers[numbers.length - 1]; index++) {
+        if (index % 2 == 0) {
+            className = "even";
+        } else {
+            className = "odd";
+        }
+        tableString += `<tr><td class="${className}">${index}</td></tr>`;
+
     }
 
-    table.innerHTML = tableString;
-    // alert(String(startValue) + " and " + String(endValue));
+    tableResult.innerHTML = tableString;
 }
